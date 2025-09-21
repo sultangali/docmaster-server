@@ -1,0 +1,34 @@
+{
+  "name": "docmaster-server",
+  "version": "1.0.0",
+  "description": "Backend server for DocMaster application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node scripts/seed.js",
+    "fix-admin": "node scripts/fix-admin.js",
+    "fix-supervisor-links": "node scripts/fixSupervisorLinks.js",
+    "fix-admin-and-links": "node scripts/fixAdminAndLinks.js",
+    "force-sync-links": "node scripts/forceSyncLinks.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["express", "mongodb", "api", "docmaster"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.10.0",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
