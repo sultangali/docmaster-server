@@ -22,7 +22,7 @@ connectDB();
 app.use(helmet());
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? 'https://your-frontend-domain.com' 
+    ? 'https://docmaster.digital' 
     : true, // Разрешаем все источники в разработке
   credentials: true
 }));
