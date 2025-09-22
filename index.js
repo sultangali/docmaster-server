@@ -21,9 +21,10 @@ connectDB();
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? 'https://docmaster.digital' 
-    : true, // Разрешаем все источники в разработке
+  origin:  'https://docmaster.digital' ,
+  // origin: process.env.NODE_ENV === 'production' 
+  //   ? 'https://docmaster.digital' 
+  //   : true, // Разрешаем все источники в разработке
   credentials: true
 }));
 
