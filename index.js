@@ -21,13 +21,21 @@ connectDB();
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin:  'https://docmaster.digital' ,
-  // origin: process.env.NODE_ENV === 'production' 
-  //   ? 'https://docmaster.digital' 
-  //   : true, // Разрешаем все источники в разработке
-  credentials: true
+  origin: [
+    'https://docmaster.digital',
+    'https://www.docmaster.digital',
+    'http://docmaster.digital',
+    'http://www.docmaster.digital',
+    'http://localhost:3000', // для разработки
+    'http://localhost:5173'  // Vite dev server
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
+// Обработка preflight запросов
+app.options('*', cors());
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 минут
